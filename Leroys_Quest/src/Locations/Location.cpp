@@ -55,7 +55,7 @@ namespace LeroysQuest {
 			}
 		);
 
-		int idx = std::distance(m_Inventory.begin(), it);
+		auto idx = std::distance(m_Inventory.begin(), it);
 		Item out = m_Inventory.at(idx);
 		m_Inventory.erase(it);
 
@@ -75,7 +75,7 @@ namespace LeroysQuest {
 			}
 		);
 
-		int idx = std::distance(m_Inventory.begin(), it);
+		auto idx = std::distance(m_Inventory.begin(), it);
 
 		const Item& item = m_Inventory[idx];
 

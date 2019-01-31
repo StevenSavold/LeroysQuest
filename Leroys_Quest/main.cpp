@@ -44,6 +44,7 @@ int main()
 	std::string processedInput;
 	std::unique_ptr<Command> command;
 
+
 	/* Begin core Game Loop */
 	while (!shouldQuit)
 	{
@@ -207,7 +208,6 @@ std::unique_ptr<LeroysQuest::Command> ProcessInputToCommand(const std::string& p
 		{
 			output = SystemCommand(parsedInput.ActionWord).clone();
 		}
-		return std::move(output);
+		return output;
 	}
-
 }

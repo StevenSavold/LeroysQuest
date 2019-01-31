@@ -1,6 +1,7 @@
 /*
  *    Xcode does not fully support std::optional yet. When compiling
- *    with Xcode use <experimental/optional>
+ *    with Xcode use <experimental/optional> and std::experimental as
+ *    the namespace.
  */
 
 #ifdef LEROY_PLATFORM_MACOS

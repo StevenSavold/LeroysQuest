@@ -1,20 +1,13 @@
 #pragma once
 
-#ifdef _MSC_VER
-	#define LEROY_DEBUG_BREAK() __debugbreak()
+#ifdef LEROY_PLATFORM_WINDOWS
+	#define LEROY_DEBUG_BREAK() /* inline debuger breakpoint for Visual C++ */ __debugbreak()
 #else
-	#define LEROY_DEBUG_BREAK() /* debug break was here */
-#endif
-
-
-#if _MSVC_LANG == 201703L
-	#define fallthrough_case [[fallthough]]
-#else	
-	#define fallthrough_case /* fall through */
+	#define LEROY_DEBUG_BREAK() /* inline assembly to break gcc and clang */   asm("int $3") 
 #endif
 
 #define LEROY_ASSERT(x) if (!(x))\
- { std::cerr << "Assertion failed! (" #x ")" << '\n'; LEROY_DEBUG_BREAK(); }
+ { std::cerr << "Assertion failed! (" #x ") " << "on line " << __LINE__ << " in file " << __FILE__ << '\n'; LEROY_DEBUG_BREAK(); }
 
 #define GetInstanceOf(x) x::GetInstance()
 

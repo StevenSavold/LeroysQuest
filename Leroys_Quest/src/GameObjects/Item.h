@@ -14,8 +14,6 @@ namespace LeroysQuest {
 		Item(const std::string& name);
 		~Item();
 
-		inline const std::string& GetName() const { return m_Name; }
-
 		void Use() const ;
 
 		friend std::ostream& operator<<(std::ostream& stream, const Item& item);
