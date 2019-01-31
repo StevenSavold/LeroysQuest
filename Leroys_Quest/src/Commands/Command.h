@@ -15,7 +15,7 @@ namespace LeroysQuest {
 		MAX_CommandTypes
 	};
 
-	#define COMMAND_CLASS_TYPE(type) static CommandType GetStaticType() { return CommandType::##type; }\
+	#define COMMAND_CLASS_TYPE(type) static CommandType GetStaticType() { return CommandType::type; }\
 								virtual CommandType GetCommandType() const override { return GetStaticType(); }\
 								virtual const char* GetName() const override { return #type; }
 
