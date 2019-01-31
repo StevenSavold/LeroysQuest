@@ -1,0 +1,12 @@
+north - Move to the room in the north direction
+south - Move to the room in the south direction
+east - Move to the room in the east direction
+west - Move to the room in the west direction
+go - Move directly to a room have been in before
+look - Get information about an object or place
+inventory - List all the items in your inventory
+use - Use an item in your inventory on an object in the room you are in
+get - Pick up an item from the room you are in and put it in your inventory
+drop - Place an item from your inventory into the room you are in
+help - Produces the list you are currently looking at
+exit - Quit the game (NOTE: there is no save feature)

@@ -1,0 +1,12 @@
+#World Map file for Leroy's Quest
+#Lines that start with '#' are comments
+#RoomName N S E W
+#
+Leroy's_Tower 1 4 2 6
+Treasureland -1 0 2 6
+Braids 0 3 1 4
+Falcon_Keep 2 -1 -1 -1
+The_Red_Chasm 6 2 0 5
+Wish_Well -1 -1 4 -1
+Heaven's_Peak 1 4 0 7
+Mermaid_Cove -1 -1 6 -1
