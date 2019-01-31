@@ -18,7 +18,7 @@ namespace LeroysQuest {
 
 	void InventorySystem::Use(const std::string& itemString)
 	{
-		std::optional<Item> item = FindItemByString(itemString);
+		Optional<Item> item = FindItemByString(itemString);
 		if (!item)
 		{
 			std::cout << "You cannot use that, you don't have one in your inventory!\n";
@@ -47,17 +47,17 @@ namespace LeroysQuest {
 
 	}
 
-	std::optional<Item> InventorySystem::FindItemByString(const std::string& itemString) const
+	Optional<Item> InventorySystem::FindItemByString(const std::string& itemString) const
 	{
 		for (size_t i = 0; i < m_Inventory.size(); ++i)
 		{
 			if (m_Inventory[i].GetName() == itemString)
 			{
-				return std::optional<Item>(m_Inventory[i]);
+				return Optional<Item>(m_Inventory[i]);
 			}
 		}
 		/* Item not in inventory */
-		return std::optional<Item>(/* No Value */);
+		return Optional<Item>(/* No Value */);
 	}
 
 }

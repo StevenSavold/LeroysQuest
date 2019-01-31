@@ -29,6 +29,11 @@ namespace LeroysQuest {
 		m_Map.push_back(mc);
 
 		currentLocation = m_Map[0];
+		
+		std::cout << "Location: " << currentLocation->Name() << '\n';
+		LookAtCurrentRoom();
+		currentLocation->OnEnter();
+
 	}
 
 	MovementSystem::~MovementSystem()

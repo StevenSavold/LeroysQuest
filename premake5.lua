@@ -38,6 +38,24 @@ project "Leroys_Quest"
         "%{prj.name}/src"
     }
 
+    filter "system:windows"
+        defines
+        {
+            "LEROY_PLATFORM_WINDOWS"
+        }
+
+    filter "system:linux"
+        defines
+        {
+            "LEROY_PLATFORM_LINUX"
+        }
+
+    filter "system:macosx"
+        defines
+        {
+            "LEROY_PLATFORM_MACOS"
+        }
+
     -- Filter for Debug configuration
     filter "configurations:Debug"
         defines 

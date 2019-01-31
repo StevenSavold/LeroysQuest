@@ -1,6 +1,6 @@
 #pragma once
 #include <vector>
-#include <optional>
+#include "Platform/Optional.h"
 #include "GameObjects/Item.h"
 
 namespace LeroysQuest {
@@ -15,7 +15,7 @@ namespace LeroysQuest {
 		InventorySystem& operator=(InventorySystem& copy) = delete;
 		InventorySystem& operator=(InventorySystem&& move) = delete;
 
-		std::optional<Item> FindItemByString(const std::string& itemString) const;
+		Optional<Item> FindItemByString(const std::string& itemString) const;
 
 	public:
 		static InventorySystem& GetInstance()
