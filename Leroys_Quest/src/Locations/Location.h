@@ -4,6 +4,7 @@
 
 #include "GameObjects/Item.h"
 #include "Commands/MovementCommand.h"
+#include "Platform/Optional.h"
 
 namespace LeroysQuest {
 
@@ -29,7 +30,7 @@ namespace LeroysQuest {
 
 		virtual Location* Move(MovementDirection direction) const ;
 
-		Item OnItemGet(const std::string& itemName);
+		Optional<Item> OnItemGet(const std::string& itemName);
 		void OnItemDrop(Item item);
 		void OnItemLook(const std::string& itemName) const ;
 

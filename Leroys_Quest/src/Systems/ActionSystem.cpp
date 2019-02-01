@@ -22,7 +22,7 @@ namespace LeroysQuest {
 
 	void ActionSystem::Go(const std::string& objectString) const
 	{
-		std::cout << "Go!\n";
+		std::cout << "Go! " << objectString << '\n';
 	}
 
 }

@@ -32,6 +32,8 @@ namespace LeroysQuest {
 
 		void DisplayCommandList() const;
 
+		void AddIdentifier(const std::string& id);
+
 	private:
 		LanguageSystem();
 		~LanguageSystem();

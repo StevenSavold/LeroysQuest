@@ -1,12 +1,19 @@
 #include "Treasureland.h"
 #include "GameObjects/Item.h"
 
+//temp
+#include "Core.h"
+#include "Systems/LanguageSystem.h"
+
 namespace LeroysQuest {
 
 	Treasureland::Treasureland()
 	{
+		LanguageSystem& ls = GetInstanceOf(LanguageSystem);
+
 		/* Add the Silver Key Item to the inventory upon creation */
-		m_Inventory.push_back(Item("Silver Key"));
+		m_Inventory.push_back(Item("silver_key"));
+		ls.AddIdentifier("silver_key");
 	}
 
 	Treasureland::~Treasureland()

@@ -3,6 +3,8 @@
 #include <iterator>
 #include <iostream>
 
+#include "Core.h"
+
 namespace LeroysQuest {
 
 	Location::Location()
@@ -47,24 +49,34 @@ namespace LeroysQuest {
 
 
 
-	Item Location::OnItemGet(const std::string& itemName)
+	Optional<Item> Location::OnItemGet(const std::string& itemName)
 	{
 		auto it = std::find_if(m_Inventory.begin(), m_Inventory.end(), 
 			[&](const Item& item) -> bool {
 				return item.GetName() == itemName;
 			}
 		);
+		if (it == m_Inventory.end())
+		{
+			std::cout << "You cannot get something that isn't here\n";
+			/* No item to get so return nothing */
+			return Optional<Item>(/* No Value */);
+		}
+		else
+		{
+			auto idx = std::distance(m_Inventory.begin(), it);
 
-		auto idx = std::distance(m_Inventory.begin(), it);
-		Item out = m_Inventory.at(idx);
-		m_Inventory.erase(it);
+			Item out = m_Inventory.at(idx);
+			m_Inventory.erase(it);
 
-		return out;
+			/* Return the item */
+			return Optional<Item>(std::move(out));
+		}
 	}
 
 	void Location::OnItemDrop(Item item)
 	{
-		m_Inventory.push_back(item);
+		m_Inventory.push_back(std::move(item));
 	}
 
 	void Location::OnItemLook(const std::string& itemName) const
@@ -75,11 +87,15 @@ namespace LeroysQuest {
 			}
 		);
 
+		if (it == m_Inventory.end())
+		{
+			std::cout << "Either the thing you are looking for isn't here, or it's invisible... \nGood luck finding it...\n";
+			return;
+		}
+
 		auto idx = std::distance(m_Inventory.begin(), it);
 
-		const Item& item = m_Inventory[idx];
-
-		std::cout << item.GetDiscription();
+		std::cout << m_Inventory[idx].GetDiscription();
 	}
 
 	void Location::SetTransitions(std::array<Location*, 4> trans)

@@ -168,10 +168,6 @@ std::string PreprocessInput(const std::string& rawInput)
 	/* Convert the whole string to lower case */
 	std::transform(output.begin(), output.end(), output.begin(), ::tolower);
 
-	/* 
-	 * NOTE: when optimizations are turned on, copy 
-	 * elision should take care of the extra copy here 
-	 */
 	return output;
 }
 

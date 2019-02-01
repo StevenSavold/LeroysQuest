@@ -5,6 +5,8 @@
 #include "GameObjects/GameObject.h"
 #include "Locations/Location.h"
 
+#include "Platform/Optional.h"
+
 
 namespace LeroysQuest {
 
@@ -28,6 +30,9 @@ namespace LeroysQuest {
 		void Move(MovementCommand command);
 		void LookAtCurrentRoom() const ;
 		void LookAtRoomItem(const std::string& itemName) const ;
+
+		Optional<Item> GetItemInCurrentRoom(const std::string& itemName);
+		void DropItemInCurrentRoom(Item item);
 
 	private:
 		MovementSystem();

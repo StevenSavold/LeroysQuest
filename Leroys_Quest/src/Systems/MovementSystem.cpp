@@ -5,16 +5,14 @@
 #include "Locations/HeavensPeak.h"
 #include "Locations/MermaidCove.h"
 
-#undef break
-
 namespace LeroysQuest {
 
 	MovementSystem::MovementSystem()
 	{
-		LeroysTower  *lt = new LeroysTower();
-		Treasureland *tr = new Treasureland();
-		HeavensPeak  *hp = new HeavensPeak();
-		MermaidCove  *mc = new MermaidCove();
+		LeroysTower*  lt = new LeroysTower();
+		Treasureland* tr = new Treasureland();
+		HeavensPeak*  hp = new HeavensPeak();
+		MermaidCove*  mc = new MermaidCove();
 
 		//                { North,   South,   East,    West    }
 		lt->SetTransitions({ tr,      nullptr, nullptr, hp      });
@@ -65,4 +63,15 @@ namespace LeroysQuest {
 	{
 		currentLocation->OnItemLook(itemName);
 	}
+
+	Optional<Item> MovementSystem::GetItemInCurrentRoom(const std::string& itemName)
+	{
+		return currentLocation->OnItemGet(itemName);
+	}
+
+	void MovementSystem::DropItemInCurrentRoom(Item item)
+	{
+		currentLocation->OnItemDrop(item);
+	}
+
 }

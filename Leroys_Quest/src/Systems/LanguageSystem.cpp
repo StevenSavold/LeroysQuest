@@ -97,4 +97,9 @@ namespace LeroysQuest {
 			m_CommandDescs.push_back(desc);
 		}
 	}
+
+	void LanguageSystem::AddIdentifier(const std::string& id)
+	{
+		m_KnownIdentifiers.push_back(std::string(id));
+	}
 }

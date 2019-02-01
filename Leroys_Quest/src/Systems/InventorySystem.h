@@ -7,7 +7,6 @@ namespace LeroysQuest {
 
 	class InventorySystem
 	{
-		/* This might be able to be an unordered map for faster lookup */
 		using Inventory = std::vector<Item>;
 
 		InventorySystem(InventorySystem& copy) = delete;
@@ -15,7 +14,7 @@ namespace LeroysQuest {
 		InventorySystem& operator=(InventorySystem& copy) = delete;
 		InventorySystem& operator=(InventorySystem&& move) = delete;
 
-		Optional<Item> FindItemByString(const std::string& itemString) const;
+		std::vector<Item>::const_iterator FindItemByString(const std::string& itemString) const;
 
 	public:
 		static InventorySystem& GetInstance()

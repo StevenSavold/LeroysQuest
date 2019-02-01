@@ -15,6 +15,38 @@ namespace LeroysQuest {
 		GameObject(const std::string& name, const std::string& desc)
 			: m_Name(name), m_Description(desc) {}
 
+		GameObject(const GameObject& copy) 
+			: m_Name(copy.m_Name), 
+			  m_Description(copy.m_Description)
+		{}
+
+		GameObject(GameObject&& move)
+			: m_Name(move.m_Name),
+			  m_Description(move.m_Description)
+		{
+			move.m_Name.clear();
+			move.m_Description.clear();
+		}
+
+		GameObject& operator=(const GameObject& copy)
+		{
+			this->m_Name = copy.m_Name;
+			this->m_Description = copy.m_Description;
+
+			return *this;
+		}
+
+		GameObject& operator=(GameObject&& move)
+		{
+			this->m_Name = move.m_Name;
+			this->m_Description = move.m_Description;
+
+			move.m_Name.clear();
+			move.m_Description.clear();
+
+			return *this;
+		}
+
 		virtual ~GameObject() 
 		{}
 

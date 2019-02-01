@@ -12,6 +12,13 @@ namespace LeroysQuest {
 
 	public:
 		Item(const std::string& name);
+
+		Item(const Item& copy);
+		Item(Item&& itemToMove);
+
+		Item& operator=(const Item& copy);
+		Item& operator=(Item&& move);
+
 		~Item();
 
 		void Use() const ;
