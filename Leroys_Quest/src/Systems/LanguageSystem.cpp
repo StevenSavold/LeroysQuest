@@ -36,8 +36,8 @@ namespace LeroysQuest {
 		 */
 		if (m_LangMap.find(word) == m_LangMap.end())
 		{
-			/* The word is not in the map, map the word to nothing */
-			return "";
+			/* The word is not in the map, map the word to itself */
+			return word;
 		}
 		else
 		{

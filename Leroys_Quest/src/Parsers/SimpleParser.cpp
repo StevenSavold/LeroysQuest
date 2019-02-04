@@ -22,7 +22,7 @@ namespace LeroysQuest {
 		while (ss >> word)
 		{
 			/* Give langSpec a word, it will translate it to a command word */
-			//word = langSpec.Translate(word);
+			word = langSpec.Translate(word);
 
 			if (langSpec.isActionWord(word))
 			{
