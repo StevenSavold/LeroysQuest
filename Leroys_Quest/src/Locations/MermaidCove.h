@@ -15,7 +15,7 @@ namespace LeroysQuest {
 		const char* TransDiscription() const override ;
 
 		void OnEnter() override ;
-		void OnExit() override ;
+		bool OnExit(MovementDirection exitDir) override ;
 		bool OnEvent(Item item) override ;
 
 	};

@@ -40,8 +40,10 @@ namespace LeroysQuest {
 	void MermaidCove::OnEnter()
 	{}
 
-	void MermaidCove::OnExit()
-	{}
+	bool MermaidCove::OnExit(MovementDirection exitDir)
+	{
+		return true;
+	}
 
 	bool MermaidCove::OnEvent(Item item)
 	{

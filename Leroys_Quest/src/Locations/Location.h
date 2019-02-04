@@ -26,7 +26,7 @@ namespace LeroysQuest {
 		virtual const char* TransDiscription() const ;
 
 		virtual void OnEnter();
-		virtual void OnExit();
+		virtual bool OnExit(MovementDirection exitDir);
 		virtual bool OnEvent(Item item);
 
 		virtual Location* Move(MovementDirection direction) const ;

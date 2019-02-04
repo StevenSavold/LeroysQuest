@@ -5,6 +5,9 @@ namespace LeroysQuest {
 
 	class WishWell : public Location
 	{
+
+		bool m_BucketUsed = false;
+
 	public:
 		WishWell();
 		~WishWell();
@@ -15,7 +18,7 @@ namespace LeroysQuest {
 		const char* TransDiscription() const override ;
 
 		void OnEnter() override ;
-		void OnExit() override ;
+		bool OnExit(MovementDirection exitDir) override ;
 		bool OnEvent(Item item) override ;
 
 	};

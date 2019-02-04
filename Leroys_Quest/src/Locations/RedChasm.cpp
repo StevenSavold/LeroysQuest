@@ -36,8 +36,10 @@ namespace LeroysQuest {
 	void RedChasm::OnEnter()
 	{}
 
-	void RedChasm::OnExit()
-	{}
+	bool RedChasm::OnExit(MovementDirection exitDir)
+	{
+		return true;
+	}
 
 	bool RedChasm::OnEvent(Item item)
 	{

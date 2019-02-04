@@ -38,11 +38,15 @@ namespace LeroysQuest {
 	void Location::OnEnter()
 	{ /* Leave empty so if the subclass doesnt implement it will do nothing */ }
 
-	void Location::OnExit()
-	{ /* Leave empty so if the subclass doesnt implement it will do nothing */ }
+	bool Location::OnExit(MovementDirection exitDir)
+	{ 
+		/* Default behavior for a location is to allow passage through in any direction */
+		return true;
+	}
 
 	bool Location::OnEvent(Item item)
 	{
+		/* Default behavior for a location is to not handle the event */
 		return false;
 	}
 
@@ -64,7 +68,6 @@ namespace LeroysQuest {
 		);
 		if (it == m_Inventory.end())
 		{
-			std::cout << "You cannot get something that isn't here\n";
 			/* No item to get so return nothing */
 			return Optional<Item>(/* No Value */);
 		}

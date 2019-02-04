@@ -38,8 +38,10 @@ namespace LeroysQuest {
 	void LeroysTower::OnEnter()
 	{}
 
-	void LeroysTower::OnExit()
-	{}
+	bool LeroysTower::OnExit(MovementDirection exitDir)
+	{
+		return true;
+	}
 
 	bool LeroysTower::OnEvent(Item item)
 	{

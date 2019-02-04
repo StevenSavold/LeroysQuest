@@ -45,8 +45,10 @@ namespace LeroysQuest {
 	void HeavensPeak::OnEnter()
 	{}
 
-	void HeavensPeak::OnExit()
-	{}
+	bool HeavensPeak::OnExit(MovementDirection exitDir)
+	{
+		return true;
+	}
 
 	bool HeavensPeak::OnEvent(Item item)
 	{

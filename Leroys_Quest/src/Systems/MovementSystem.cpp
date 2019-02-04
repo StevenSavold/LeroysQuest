@@ -68,10 +68,20 @@ namespace LeroysQuest {
 			currentLocation = temp;
 			return;
 		}
-		temp->OnExit();
-		std::cout << "Location: " << currentLocation->Name() << '\n';
-		LookAtCurrentRoom();
-		currentLocation->OnEnter();
+		if (temp->OnExit(command.GetMovementDirection()))
+		{
+			std::cout << "Location: " << currentLocation->Name() << '\n';
+			LookAtCurrentRoom();
+			currentLocation->OnEnter();
+		}
+		else
+		{
+			/* 
+			 * If OnExit() returned false, the player cannot move that way
+			 * yet. Set the location back to where they are trying to come from.
+			 */
+			currentLocation = temp;
+		}
 	}
 
 	void MovementSystem::LookAtCurrentRoom() const

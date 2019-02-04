@@ -35,8 +35,10 @@ namespace LeroysQuest {
 	void FalconKeep::OnEnter()
 	{}
 
-	void FalconKeep::OnExit()
-	{}
+	bool FalconKeep::OnExit(MovementDirection exitDir)
+	{
+		return true;
+	}
 
 	bool FalconKeep::OnEvent(Item item)
 	{
