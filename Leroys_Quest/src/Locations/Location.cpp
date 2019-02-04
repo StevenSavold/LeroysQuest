@@ -29,6 +29,10 @@ namespace LeroysQuest {
 		return "";
 	}
 
+	const char* Location::TransDiscription() const
+	{
+		return "Looks like it leads somewhere...\n";
+	}
 
 
 	void Location::OnEnter()
@@ -103,6 +107,14 @@ namespace LeroysQuest {
 	void Location::SetTransitions(std::array<Location*, 4> trans)
 	{
 		m_Transitions = trans;
+	}
+
+	void Location::PrintAreaTransitions() const
+	{
+		std::cout << "To the North: " << ((!m_Transitions[0]) ? "Nothing...\n" : m_Transitions[0]->TransDiscription());
+		std::cout << "To the South: " << ((!m_Transitions[1]) ? "Nothing...\n" : m_Transitions[1]->TransDiscription());
+		std::cout << "To the East:  " << ((!m_Transitions[2]) ? "Nothing...\n" : m_Transitions[2]->TransDiscription());
+		std::cout << "To the West:  " << ((!m_Transitions[3]) ? "Nothing...\n" : m_Transitions[3]->TransDiscription());
 	}
 
 }

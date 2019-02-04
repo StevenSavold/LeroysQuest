@@ -36,6 +36,10 @@ namespace LeroysQuest {
 		}
 	}
 
+	const char* HeavensPeak::TransDiscription() const
+	{
+		return "A range of mountains...\n";
+	}
 
 
 	void HeavensPeak::OnEnter()

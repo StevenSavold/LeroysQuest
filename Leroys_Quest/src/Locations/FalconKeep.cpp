@@ -6,7 +6,6 @@ namespace LeroysQuest {
 	{
 	}
 
-
 	FalconKeep::~FalconKeep()
 	{
 	}
@@ -20,13 +19,17 @@ namespace LeroysQuest {
 	const char* FalconKeep::Description() const
 	{
 		return "";
-	} 
+	}
 
 	const char* FalconKeep::ConditionalDescription() const
 	{
-		return ""; 
+		return "";
 	}
 
+	const char* FalconKeep::TransDiscription() const
+	{
+		return "A metal door inset into a cliff wall...\n";
+	}
 
 
 	void FalconKeep::OnEnter()

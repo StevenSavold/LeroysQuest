@@ -21,7 +21,7 @@ namespace LeroysQuest {
 	{
 		return "You stand before a tall tower. It looks old and weathered,\n"
 			"but based on the rumors there is a large sum of treasure inside.\n"
-			"It is locked behind the towers BIG_DOOR.\n";
+			"It is locked behind the towers BIG-DOOR.\n";
 	} 
 
 	const char* LeroysTower::ConditionalDescription() const
@@ -29,6 +29,10 @@ namespace LeroysQuest {
 		return ""; 
 	}
 
+	const char* LeroysTower::TransDiscription() const
+	{
+		return "Leroy's Tower...\n";
+	}
 
 
 	void LeroysTower::OnEnter()

@@ -77,7 +77,8 @@ namespace LeroysQuest {
 	void MovementSystem::LookAtCurrentRoom() const
 	{
 		std::cout << currentLocation->Description() << '\n';
-		std::cout << currentLocation->ConditionalDescription();
+		std::cout << currentLocation->ConditionalDescription() << '\n';
+		currentLocation->PrintAreaTransitions();
 	}
 
 	void MovementSystem::LookAtRoomItem(const std::string& itemName) const

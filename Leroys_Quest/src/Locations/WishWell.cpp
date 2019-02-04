@@ -38,6 +38,10 @@ namespace LeroysQuest {
 		// if it has been used, you can say nothing? 
 	}
 
+	const char* WishWell::TransDiscription() const
+	{
+		return "A small water well...\n";
+	}
 
 
 	void WishWell::OnEnter()

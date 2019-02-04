@@ -12,6 +12,7 @@ namespace LeroysQuest {
 		const char* Name() const override ;
 		const char* Description() const override ;
 		const char* ConditionalDescription() const override ;
+		const char* TransDiscription() const override ;
 
 		void OnEnter() override ;
 		void OnExit() override ;

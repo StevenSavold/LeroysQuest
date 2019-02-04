@@ -27,6 +27,10 @@ namespace LeroysQuest {
 		return ""; 
 	}
 
+	const char* RedChasm::TransDiscription() const
+	{
+		return "A ravine, with dark smoke wisps emanating from it\n";
+	}
 
 
 	void RedChasm::OnEnter()

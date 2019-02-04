@@ -50,6 +50,10 @@ namespace LeroysQuest {
 		}
 	}
 
+	const char* Treasureland::TransDiscription() const
+	{
+		return "A forest with plenty of acorns\n";
+	}
 
 
 	void Treasureland::OnEnter()

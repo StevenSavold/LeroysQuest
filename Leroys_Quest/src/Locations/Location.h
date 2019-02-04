@@ -23,6 +23,7 @@ namespace LeroysQuest {
 		virtual const char* Name() const ;
 		virtual const char* Description() const ;
 		virtual const char* ConditionalDescription() const ;
+		virtual const char* TransDiscription() const ;
 
 		virtual void OnEnter();
 		virtual void OnExit();
@@ -35,6 +36,7 @@ namespace LeroysQuest {
 		void OnItemLook(const std::string& itemName) const ;
 
 		void SetTransitions(std::array<Location*, 4> trans);
+		void PrintAreaTransitions() const ;
 	}; 
 
 }

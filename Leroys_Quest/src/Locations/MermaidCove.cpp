@@ -31,6 +31,10 @@ namespace LeroysQuest {
 		return ""; 
 	}
 
+	const char* MermaidCove::TransDiscription() const
+	{
+		return "A small lake surround by trees\n";
+	}
 
 
 	void MermaidCove::OnEnter()

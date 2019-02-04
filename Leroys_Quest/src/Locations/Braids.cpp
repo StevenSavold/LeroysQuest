@@ -6,7 +6,6 @@ namespace LeroysQuest {
 	{
 	}
 
-
 	Braids::~Braids()
 	{
 	}
@@ -27,6 +26,10 @@ namespace LeroysQuest {
 		return ""; 
 	}
 
+	const char* Braids::TransDiscription() const
+	{
+		return "There appears to be some tall woven structures...\n";
+	}
 
 
 	void Braids::OnEnter()
