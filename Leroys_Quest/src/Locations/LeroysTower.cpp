@@ -37,7 +37,9 @@ namespace LeroysQuest {
 	void LeroysTower::OnExit()
 	{}
 
-	void LeroysTower::OnEvent()
-	{}
+	bool LeroysTower::OnEvent(Item item)
+	{
+		return false;
+	}
 
 }

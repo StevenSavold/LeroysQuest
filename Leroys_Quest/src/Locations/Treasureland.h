@@ -18,7 +18,7 @@ namespace LeroysQuest {
 
 		void OnEnter() override ;
 		void OnExit() override ;
-		void OnEvent() override ;
+		bool OnEvent(Item item) override ;
 
 	};
 

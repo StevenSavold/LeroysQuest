@@ -3,11 +3,11 @@
 
 namespace LeroysQuest {
 
-	class LeroysTower : public Location
+	class Braids : public Location
 	{
 	public:
-		LeroysTower();
-		~LeroysTower();
+		Braids();
+		~Braids();
 
 		const char* Name() const override ;
 		const char* Description() const override ;

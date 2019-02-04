@@ -34,6 +34,9 @@ namespace LeroysQuest {
 		Optional<Item> GetItemInCurrentRoom(const std::string& itemName);
 		void DropItemInCurrentRoom(Item item);
 
+		bool UseRemoteItem(Item item) const ;
+		void UseLocalItem(Item item);
+
 	private:
 		MovementSystem();
 		~MovementSystem();

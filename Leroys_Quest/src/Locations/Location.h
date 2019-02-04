@@ -26,7 +26,7 @@ namespace LeroysQuest {
 
 		virtual void OnEnter();
 		virtual void OnExit();
-		virtual void OnEvent();
+		virtual bool OnEvent(Item item);
 
 		virtual Location* Move(MovementDirection direction) const ;
 

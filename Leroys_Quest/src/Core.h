@@ -17,3 +17,7 @@ bool IsTypeOf(std::string word)
 	return T::HasCommandWord(word);
 }
 #define IsTypeOf(Type, word) IsTypeOf<Type>(word)
+
+#define SAFE_DELETE(x) \
+		if (x) { delete (x); } \
+		x = nullptr

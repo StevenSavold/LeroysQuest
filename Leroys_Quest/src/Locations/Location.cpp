@@ -37,8 +37,10 @@ namespace LeroysQuest {
 	void Location::OnExit()
 	{ /* Leave empty so if the subclass doesnt implement it will do nothing */ }
 
-	void Location::OnEvent()
-	{ /* Leave empty so if the subclass doesnt implement it will do nothing */ }
+	bool Location::OnEvent(Item item)
+	{
+		return false;
+	}
 
 
 

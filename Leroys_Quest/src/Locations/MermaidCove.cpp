@@ -39,9 +39,10 @@ namespace LeroysQuest {
 	void MermaidCove::OnExit()
 	{}
 
-	void MermaidCove::OnEvent()
+	bool MermaidCove::OnEvent(Item item)
 	{
 		// look at the rock to find the mermaid. it will do something... 
+		return false;
 	}
 
 }

@@ -60,7 +60,7 @@ namespace LeroysQuest {
 	void Treasureland::OnExit()
 	{}
 
-	void Treasureland::OnEvent()
+	bool Treasureland::OnEvent(Item item)
 	{
 		// Event should be singing the treasureland theme song.
 		// and this should give the player the silver key item
@@ -79,6 +79,8 @@ namespace LeroysQuest {
 			/* after the player has already sang the song correctly */
 			"The forest is pleased you are singing for it again. \n"
 			"However it has nothing else to give you in return.  \n";
+
+		return false;
 
 	}
 

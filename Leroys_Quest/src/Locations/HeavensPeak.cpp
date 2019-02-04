@@ -44,10 +44,11 @@ namespace LeroysQuest {
 	void HeavensPeak::OnExit()
 	{}
 
-	void HeavensPeak::OnEvent()
+	bool HeavensPeak::OnEvent(Item item)
 	{
 		// when the bird caught in the braids is freed, 
 		// it will come here and give the player a key?
+		return false;
 	}
 
 }

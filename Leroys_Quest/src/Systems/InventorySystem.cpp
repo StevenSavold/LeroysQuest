@@ -21,14 +21,42 @@ namespace LeroysQuest {
 
 	void InventorySystem::Use(const std::string& itemString)
 	{
+		MovementSystem& ms = GetInstanceOf(MovementSystem);
+
 		auto itemItr = FindItemByString(itemString);
-		if (itemItr == m_Inventory.end())
+		Optional<Item> roomItem = ms.GetItemInCurrentRoom(itemString);
+
+		if ((itemItr != m_Inventory.end()))
 		{
-			std::cout << "You cannot use that, you don't have one in your inventory!\n";
-			return;
+			long idx = std::distance<std::vector<Item>::const_iterator>(m_Inventory.begin(), itemItr);
+			if (ms.UseRemoteItem(m_Inventory[idx]))
+			{
+				// if the item was used, remove it
+				m_Inventory.erase(itemItr);
+			}
+			else 
+			{ 
+				// otherwise keep it and print something like "that item has no use here"
+				std::cout << "That seems like a bad idea here...\n";
+			}
 		}
-		long idx = std::distance<std::vector<Item>::const_iterator>(m_Inventory.begin(), itemItr);
-		m_Inventory[idx].Use();
+		else if (roomItem) // if the item specified was not in the players inventory maybe it was within the room
+		{
+			/* 
+			 * NOTE: this is kind of a round about way of doing this.
+			 * I am currently removing the item from the rooms inventory, 
+			 * to make this check here. Then if it was the proper item I'm 
+			 * passing it all the way back into the room for it to handle 
+			 * whether it needs to be deleted or put back.
+			 */
+			ms.UseLocalItem(*roomItem);
+		}
+		else // if item was not on the player or in the room
+		{
+			std::cout << "You cannot use what is not available to you!\n";
+		}
+
+		return;
 	}
 	
 	void InventorySystem::Get(const std::string& itemString)
@@ -41,10 +69,10 @@ namespace LeroysQuest {
 		MovementSystem&  ms = GetInstanceOf(MovementSystem);
 
 		Optional<Item> item = ms.GetItemInCurrentRoom(itemString);
-		if (item)
+		if (item) // If the optional item was returned properly
 			m_Inventory.push_back(std::move(*item));
-		//else 
-			//Do nothing because item doesn't exist
+		// else
+			// Do nothing because item doesn't exist
 		return;
 
 	}
