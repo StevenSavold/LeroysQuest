@@ -60,6 +60,7 @@ namespace LeroysQuest {
 				"You don the fireproof clothes. Allowing you to enter the \n"
 				"chasm at last to retrieve the TOWER-KEY, allowing you to \n"
 				"enter Leroy's Tower.\n";
+            return true;
 		}
 		else 
 		{

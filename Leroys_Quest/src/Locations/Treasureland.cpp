@@ -61,7 +61,7 @@ namespace LeroysQuest {
 
 	void Treasureland::OnEnter()
 	{
-		m_FirstVisit = false;
+		//m_FirstVisit = false;
 	}
 
 	bool Treasureland::OnExit(MovementDirection exitDir)

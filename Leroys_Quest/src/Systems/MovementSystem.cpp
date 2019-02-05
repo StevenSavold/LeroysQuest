@@ -45,7 +45,7 @@ namespace LeroysQuest {
 
 		currentLocation = m_Map[0];
 		
-		std::cout << "Location: " << currentLocation->Name() << '\n';
+		std::cout << "\n\nLocation: " << currentLocation->Name() << '\n';
 		LookAtCurrentRoom();
 		currentLocation->OnEnter();
 	}
@@ -70,7 +70,7 @@ namespace LeroysQuest {
 		}
 		if (temp->OnExit(command.GetMovementDirection()))
 		{
-			std::cout << "Location: " << currentLocation->Name() << '\n';
+			std::cout << "\n\nLocation: " << currentLocation->Name() << '\n';
 			LookAtCurrentRoom();
 			currentLocation->OnEnter();
 		}

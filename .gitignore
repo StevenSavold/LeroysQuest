@@ -8,3 +8,7 @@ bin-int/
 *.vcxproj
 *.filters
 *.user
+
+*.DS_Store
+*.xcworkspace
+*.xcodeproj
