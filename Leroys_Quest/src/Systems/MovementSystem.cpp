@@ -15,14 +15,14 @@ namespace LeroysQuest {
 
 	MovementSystem::MovementSystem()
 	{
-		LeroysTower*  lt = new LeroysTower();
-		Treasureland* tr = new Treasureland();
-		HeavensPeak*  hp = new HeavensPeak();
-		MermaidCove*  mc = new MermaidCove();
-		WishWell*     ww = new WishWell();
-		RedChasm*     rc = new RedChasm();
-		FalconKeep*   fk = new FalconKeep();
-		Braids*       br = new Braids();
+		LeroysTower*  lt = new LeroysTower();  // 0
+		Treasureland* tr = new Treasureland(); // 1
+		HeavensPeak*  hp = new HeavensPeak();  // 2
+		MermaidCove*  mc = new MermaidCove();  // 3
+		WishWell*     ww = new WishWell();     // 4
+		RedChasm*     rc = new RedChasm();     // 5
+		FalconKeep*   fk = new FalconKeep();   // 6
+		Braids*       br = new Braids();       // 7
 
 		//                 { North,   South,   East,    West    }
 		lt->SetTransitions({ tr,      rc,      br,      hp      });
@@ -31,8 +31,8 @@ namespace LeroysQuest {
 		mc->SetTransitions({ nullptr, hp,      nullptr, nullptr });
 		ww->SetTransitions({ nullptr, nullptr, rc,      nullptr });
 		rc->SetTransitions({ hp,      br,      lt,      ww      });
-		br->SetTransitions({ lt,      fk,      tr,      rc      });
 		fk->SetTransitions({ nullptr, nullptr, br,      nullptr });
+		br->SetTransitions({ lt,      fk,      tr,      rc      });
 
 		m_Map.push_back(lt);
 		m_Map.push_back(tr);

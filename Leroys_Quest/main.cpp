@@ -22,6 +22,7 @@
 #include "Systems/ActionSystem.h"
 #include "Systems/InventorySystem.h"
 #include "Systems/LanguageSystem.h"
+#include "Systems/AchievementSystem.h"
 
 std::string GetUserInput();
 std::string PreprocessInput(const std::string& rawInput);
@@ -38,6 +39,7 @@ int main()
 	ActionSystem&    ActSystem  = GetInstanceOf(ActionSystem);
 	InventorySystem& InvSystem  = GetInstanceOf(InventorySystem);
 	LanguageSystem&  LangSystem = GetInstanceOf(LanguageSystem);
+	AchievementSystem& AchieveSystem = GetInstanceOf(AchievementSystem);
 
 	bool shouldQuit = false;
 	std::string userInput;
@@ -46,7 +48,7 @@ int main()
 
 
 	/* Begin core Game Loop */
-	while (!shouldQuit)
+	while (!shouldQuit && !AchieveSystem.Completed)
 	{
 		/* 
 		 * Returns a copy of the users entered string,

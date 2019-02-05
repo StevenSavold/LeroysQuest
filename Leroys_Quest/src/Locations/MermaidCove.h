@@ -5,6 +5,9 @@ namespace LeroysQuest {
 
 	class MermaidCove : public Location
 	{
+
+		bool m_HelpedMermaid = false;
+
 	public:
 		MermaidCove();
 		~MermaidCove();

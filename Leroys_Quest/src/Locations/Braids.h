@@ -5,9 +5,6 @@ namespace LeroysQuest {
 
 	class Braids : public Location
 	{
-
-		bool m_BirdFreed = false;
-
 	public:
 		Braids();
 		~Braids();

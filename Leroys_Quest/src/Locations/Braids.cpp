@@ -1,4 +1,6 @@
 #include "Braids.h"
+#include "Systems/AchievementSystem.h"
+#include "Core.h"
 #include <iostream>
 
 namespace LeroysQuest {
@@ -26,7 +28,9 @@ namespace LeroysQuest {
 
 	const char* Braids::ConditionalDescription() const
 	{
-		if (!m_BirdFreed)
+		AchievementSystem& as = GetInstanceOf(AchievementSystem);
+
+		if (!as.SetBirdFree)
 		{
 			return "Looking up you find a bird trapped in the braids above.\n"
 				   "It must have gotten stuck when flying nearby. It seems \n"
@@ -44,7 +48,9 @@ namespace LeroysQuest {
 
 	const char* Braids::TransDiscription() const
 	{
-		if (!m_BirdFreed)
+		AchievementSystem& as = GetInstanceOf(AchievementSystem);
+
+		if (!as.SetBirdFree)
 		{ 
 			return "There appears to be some tall woven structures...\n";
 		}
@@ -60,7 +66,9 @@ namespace LeroysQuest {
 
 	bool Braids::OnExit(MovementDirection exitDir)
 	{
-		if (m_BirdFreed == false && exitDir == MovementDirection::South)
+		AchievementSystem& as = GetInstanceOf(AchievementSystem);
+
+		if (as.SetBirdFree == false && exitDir == MovementDirection::South)
 		{
 			std::cout <<
 				"The thick braids block your path south. You could probably \n"
@@ -72,6 +80,8 @@ namespace LeroysQuest {
 
 	bool Braids::OnEvent(Item item)
 	{
+		AchievementSystem& as = GetInstanceOf(AchievementSystem);
+
 		if (item.GetName() == "scissors")
 		{
 			std::cout <<
@@ -83,7 +93,7 @@ namespace LeroysQuest {
 				"more minutes of this you finally clear a large enough path to  \n"
 				"to travel through, opening the path to the south.\n";
 
-			m_BirdFreed = true;
+			as.SetBirdFree = true;
 			return true;
 		}
 		else 

@@ -11,9 +11,8 @@ namespace LeroysQuest {
 	{
 		LanguageSystem& ls = GetInstanceOf(LanguageSystem);
 
-		/* Add the Silver Key Item to the inventory upon creation */
-		m_Inventory.push_back(Item("silver-key"));
-		ls.AddIdentifier("silver-key");
+		m_Inventory.push_back(Item("hair-brush"));
+		ls.AddIdentifier("hair-brush");
 
 		m_Inventory.push_back(Item("song-stone"));
 		ls.AddIdentifier("song-stone");
@@ -90,7 +89,7 @@ namespace LeroysQuest {
 			std::cout <<
 				"A strong wind blows in response to the singing of the \n"
 				"treasureland theme song. The forest seems pleased with \n"
-				"your performance. You look up in time to see a SILVER-KEY\n"
+				"your performance. You look up in time to see a HAIR-BRUSH\n"
 				"fall from the sky and land at your feet.\n";
 
 			m_SongSang = true;
